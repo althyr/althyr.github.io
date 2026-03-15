@@ -205,11 +205,32 @@
       <p class="workshop-hero-desc">
         London-based workshops launching in 2026 — drawing on Stanislavski's method and the Yat Malmgren approach to movement and character. Small groups. Practical, process-led work.
       </p>
-      <form class="signup-form" action="https://formspree.io/f/mreyaryk" method="POST">
-        <input type="email" class="signup-input" name="email" placeholder="your@email.com" required>
-        <input type="hidden" name="subject" value="Workshop interest">
-        <button type="submit" class="signup-btn">Notify me</button>
+      <form id="signup-form-teaching">
+        <div class="signup-form">
+          <input type="email" class="signup-input" id="signup-email-teaching" placeholder="your@email.com" required>
+          <button type="submit" class="signup-btn">Notify me</button>
+        </div>
+        <p class="signup-note" id="signup-msg-teaching">No spam. One email when dates are confirmed.</p>
       </form>
+      <script>
+        document.getElementById('signup-form-teaching').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const msg = document.getElementById('signup-msg-teaching');
+          const data = new FormData();
+          data.append('email', document.getElementById('signup-email-teaching').value);
+          data.append('subject', 'Workshop interest');
+          const response = await fetch('https://formspree.io/f/mreyaryk', {
+            method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            msg.textContent = "Thanks — I'll be in touch when dates are confirmed.";
+            msg.style.color = 'var(--accent)';
+            this.reset();
+          } else {
+            msg.textContent = 'Something went wrong. Try again shortly.';
+          }
+        });
+      </script>
       <p class="signup-note" id="signup-msg">No spam. One email when dates are confirmed.</p>
     </div>
     <div class="workshop-details">
