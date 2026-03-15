@@ -198,7 +198,7 @@
     </div>
 
     <div class="contact-form-wrap">
-      <form id="contact-form" onsubmit="handleContact(event)">
+      <form id="contact-form" action="https://formspree.io/f/mreyaryk" method="POST">
         <div class="form-group">
           <label class="form-label" for="name">Name</label>
           <input class="form-input" type="text" id="name" placeholder="Your name" required>
@@ -226,10 +226,6 @@
         </div>
         <button type="submit" class="form-submit">Send message</button>
       </form>
-      <div class="form-success" id="form-success">
-        <p class="form-success-title">Message sent</p>
-        <p class="form-success-text">Thank you — I'll be in touch shortly.</p>
-      </div>
     </div>
   </div>
 
@@ -243,14 +239,6 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </footer>
-
-  <script>
-    function handleContact(e) {
-      e.preventDefault();
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    }
-  </script>
 
 </body>
 </html>
