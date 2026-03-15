@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play Reviews — Althyr Pivatto</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .reviews-intro {
+      max-width: 600px;
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 64px;
+    }
+
+    .review-list { max-width: 860px; }
+
+    .review-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: start;
+      padding: 48px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .review-item:first-child { border-top: 0.5px solid var(--border); }
+
+    .review-title {
+      font-family: var(--ff-display);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .review-author {
+      font-family: var(--ff-label);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 20px;
+    }
+
+    .review-excerpt {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--muted);
+      font-style: italic;
+      border-left: 1px solid var(--border2);
+      padding-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    .review-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--ff-label);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      transition: gap 0.2s;
+    }
+    .review-link:hover { gap: 12px; }
+    .review-link-arrow { font-size: 14px; }
+
+    .review-publication {
+      text-align: right;
+      padding-top: 6px;
+    }
+    .review-pub-name {
+      font-family: var(--ff-label);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 4px;
+    }
+    .review-pub-label {
+      font-size: 12px;
+      color: var(--faint);
+    }
+
+    .afridiziak-note {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 0.5px solid var(--border);
+      font-size: 13px;
+      color: var(--faint);
+    }
+    .afridiziak-note a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .afridiziak-note a:hover { color: var(--text); }
+
+    @media (max-width: 700px) {
+      .review-item { grid-template-columns: 1fr; gap: 16px; }
+      .review-publication { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Althyr Pivatto</a>
+    <ul class="nav-links">
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="audio.html">Audio</a></li>
+      <li><a href="teaching.html">Workshops</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">Writing</p>
+    <h1>Play Reviews</h1>
+  </div>
+
+  <div class="section">
+    <p class="reviews-intro">
+      Alongside directing and performing, Althyr writes about theatre for Afridiziak Theatre News — one of the UK's leading platforms covering Black and Asian-led theatre and the broader London stage.
+    </p>
+
+    <div class="review-list">
+
+      <div class="review-item">
+        <div>
+          <h2 class="review-title">The Line of Beauty</h2>
+          <p class="review-author">Adapted by Jack Holden</p>
+          <!-- Optional: add a short line from your review here, e.g.:
+          <p class="review-excerpt">Your pull quote from the review goes here.</p>
+          -->
+          <p class="review-excerpt">The play takes us on a journey of the symbolism of art and its importance without sounding preachy. The lines of beauty were present from the simple setting to the nostalgic music — an s-shaped form that defines what is beautiful, versus a flat straight line which represents stillness and death.</p>
+          <a href="https://www.afridiziak.com/reviews/the-line-of-beauty-adapted-by-jack-holden/" target="_blank" class="review-link">
+            Read full review <span class="review-link-arrow">→</span>
+          </a>
+        </div>
+        <div class="review-publication">
+          <p class="review-pub-name">Afridiziak</p>
+          <p class="review-pub-label">Theatre News</p>
+        </div>
+      </div>
+
+      <div class="review-item">
+        <div>
+          <h2 class="review-title">Into the Woods</h2>
+          <p class="review-author">By Stephen Sondheim</p>
+          <p class="review-excerpt">A forest may be an unusual place to sell a cow or visit a grandmother, but it is certainly the right place to run from a prince and, no less importantly, to lift a spell. Tom Scutt's set design makes you feel genuinely surrounded by the forest — birds, a house, a tower, trees composing a landscape that invites the actors to play and fully immerses the audience.</p>
+          <a href="https://www.afridiziak.com/reviews/into-the-woods-by-stephen-sondheim/" target="_blank" class="review-link">
+            Read full review <span class="review-link-arrow">→</span>
+          </a>
+        </div>
+        <div class="review-publication">
+          <p class="review-pub-name">Afridiziak</p>
+          <p class="review-pub-label">Theatre News</p>
+        </div>
+      </div>
+
+      <div class="review-item">
+        <div>
+          <h2 class="review-title">Romeo &amp; Juliet</h2>
+          <p class="review-author">By William Shakespeare · Shakespeare's Globe</p>
+          <p class="review-excerpt">The importance of this play goes beyond the stage and educating a younger generation into Shakespeare — the real importance lies in using art to take them away from violent behaviour.</p>
+          <a href="https://www.afridiziak.com/reviews/romeo-and-juliet-by-william-shakespeare-the-globe/" target="_blank" class="review-link">
+            Read full review <span class="review-link-arrow">→</span>
+          </a>
+        </div>
+        <div class="review-publication">
+          <p class="review-pub-name">Afridiziak</p>
+          <p class="review-pub-label">Theatre News</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="afridiziak-note">
+      Published on <a href="https://www.afridiziak.com" target="_blank">Afridiziak Theatre News</a> — covering London theatre with a focus on diversity and representation on stage.
+    </p>
+
+  </div>
+
+  <footer>
+    <span class="footer-name">Althyr Pivatto</span>
+    <ul class="footer-links">
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="audio.html">Audio</a></li>
+      <li><a href="teaching.html">Workshops</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
