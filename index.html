@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Althyr Pivatto — Director · Actor · Translator</title>
+  <meta name="description" content="Althyr Pivatto is a Brazilian theatre director, actor, translator and voice director based in London, available for work across London and Europe.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 15% 60%, rgba(139,74,42,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 85% 30%, rgba(200,169,110,0.04) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 48px 80px;
+    }
+    .hero-eyebrow {
+      font-family: var(--ff-label);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+    }
+    .hero-name {
+      font-family: var(--ff-display);
+      font-size: clamp(56px, 8vw, 100px);
+      font-weight: 300;
+      line-height: 0.95;
+      color: var(--text);
+      margin-bottom: 32px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .tag {
+      font-family: var(--ff-label);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 0.5px solid var(--border2);
+      padding: 5px 12px;
+      border-radius: 1px;
+    }
+    .hero-cta {
+      display: inline-block;
+      font-family: var(--ff-label);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 0.5px solid var(--accent);
+      padding: 12px 28px;
+      border-radius: 1px;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-start;
+    }
+    .hero-cta:hover { background: var(--accent); color: var(--black); }
+    .hero-right {
+      border-left: 0.5px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 48px 80px;
+      gap: 40px;
+    }
+    .hero-quote {
+      font-family: var(--ff-display);
+      font-size: clamp(16px, 1.8vw, 20px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    .hero-quote::before {
+      content: '\201C';
+      font-size: 2em;
+      line-height: 0;
+      vertical-align: -0.3em;
+      color: var(--faint);
+      margin-right: 4px;
+    }
+    .hero-bio {
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--faint);
+      border-top: 0.5px solid var(--border);
+      padding-top: 32px;
+    }
+    .hero-bio strong { color: var(--muted); font-weight: 400; }
+
+    /* productions */
+    .productions { padding: 80px 48px; border-bottom: 0.5px solid var(--border); }
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .prod-card {
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .prod-card-img {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.55;
+      transition: opacity 0.4s, transform 0.5s;
+    }
+    .prod-card:hover .prod-card-img { opacity: 0.75; transform: scale(1.03); }
+    .prod-card-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .prod-card-placeholder span {
+      font-family: var(--ff-display);
+      font-size: 80px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.04);
+    }
+    .prod-card-body {
+      position: relative;
+      z-index: 2;
+      padding: 20px 24px;
+      background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 100%);
+    }
+    .prod-accent { width: 24px; height: 1px; margin-bottom: 12px; }
+    .prod-year {
+      font-family: var(--ff-label);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--faint);
+      margin-bottom: 4px;
+    }
+    .prod-title {
+      font-family: var(--ff-display);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .prod-role {
+      font-family: var(--ff-label);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .prod-venue { font-size: 12px; color: var(--faint); }
+
+    /* disciplines */
+    .what { padding: 80px 48px; border-bottom: 0.5px solid var(--border); }
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 0.5px solid var(--border);
+    }
+    .what-item {
+      padding: 36px 28px;
+      border-right: 0.5px solid var(--border);
+    }
+    .what-item:last-child { border-right: none; }
+    .what-number {
+      font-family: var(--ff-display);
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 18px;
+      letter-spacing: 0.1em;
+    }
+    .what-title {
+      font-family: var(--ff-display);
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .what-desc { font-size: 13px; line-height: 1.75; color: var(--muted); }
+
+    /* workshops teaser */
+    .workshops-teaser {
+      padding: 80px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .workshops-label {
+      font-family: var(--ff-label);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .workshops-title {
+      font-family: var(--ff-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .workshops-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .signup-form { display: flex; }
+    .signup-input {
+      flex: 1;
+      background: var(--surface);
+      border: 0.5px solid var(--border2);
+      border-right: none;
+      color: var(--text);
+      font-family: var(--ff-body);
+      font-size: 13px;
+      padding: 12px 16px;
+      outline: none;
+    }
+    .signup-input::placeholder { color: var(--faint); }
+    .signup-input:focus { border-color: var(--accent); }
+    .signup-btn {
+      background: var(--accent);
+      color: var(--black);
+      border: 0.5px solid var(--accent);
+      font-family: var(--ff-label);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .signup-btn:hover { opacity: 0.85; }
+    .signup-note { font-size: 11px; color: var(--faint); margin-top: 10px; }
+    .workshops-right { border-left: 0.5px solid var(--border); padding-left: 80px; padding-top: 4px; }
+    .workshop-detail {
+      padding: 24px 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .workshop-detail:first-child { padding-top: 0; }
+    .workshop-detail:last-child { border-bottom: none; }
+    .workshop-detail-label {
+      font-family: var(--ff-label);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 6px;
+    }
+    .workshop-detail-text {
+      font-family: var(--ff-display);
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 120px 24px 48px; }
+      .hero-right { border-left: none; border-top: 0.5px solid var(--border); padding: 48px 24px; }
+      .prod-grid { grid-template-columns: 1fr; gap: 1px; }
+      .prod-card { aspect-ratio: 4/3; }
+      .what-grid { grid-template-columns: 1fr 1fr; }
+      .what-item:nth-child(2) { border-right: none; }
+      .what-item:nth-child(3) { border-top: 0.5px solid var(--border); }
+      .what-item:nth-child(4) { border-top: 0.5px solid var(--border); border-right: none; }
+      .workshops-teaser { grid-template-columns: 1fr; gap: 48px; }
+      .workshops-right { border-left: none; border-top: 0.5px solid var(--border); padding-left: 0; padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Althyr Pivatto</a>
+    <ul class="nav-links">
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="audio.html">Audio</a></li>
+      <li><a href="teaching.html">Workshops</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">London · Europe</p>
+      <h1 class="hero-name">Althyr<br>Pivatto</h1>
+      <div class="hero-tags">
+        <span class="tag">Director</span>
+        <span class="tag">Actor</span>
+        <span class="tag">Translator</span>
+        <span class="tag">Voice Director</span>
+      </div>
+      <a href="contact.html" class="hero-cta">Get in touch</a>
+    </div>
+    <div class="hero-right">
+      <blockquote class="hero-quote">
+        My style as a director is naturalistic, hence my affinity with Scandinavian and European playwrights. I am committed to revealing real people in an extract of their lives, which resemble the audience's most private moments.
+      </blockquote>
+      <p class="hero-bio">
+        Brazilian creative based in <strong>London</strong>. Trained at the Giles Foreman Centre for Acting in Stanislavski and Movement Psychology (Yat Malmgren lineage). Theatre work at the <strong>White Bear Theatre, Bridewell Theatre and Southwark Playhouse</strong>. Four plays translated from Portuguese. 20+ titles dubbed for <strong>Netflix Brazil</strong>. Available for directing, acting, translation and audio work across London and Europe.
+      </p>
+    </div>
+  </section>
+
+  <section class="productions">
+    <p class="section-label">Selected productions</p>
+    <div class="prod-grid">
+
+      <div class="prod-card">
+        <img src="images/frankenstein.jpg" alt="Frankenstein: Fragments of War" class="prod-card-img" onerror="this.style.display='none'">
+        <div class="prod-card-placeholder"><span>I</span></div>
+        <div class="prod-card-body">
+          <div class="prod-accent" style="background:#8b2a1a;"></div>
+          <p class="prod-year">2023</p>
+          <h3 class="prod-title">Frankenstein:<br>Fragments of War</h3>
+          <p class="prod-role">Director</p>
+          <p class="prod-venue">White Bear Theatre, London</p>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <img src="images/river.jpg" alt="Where the River Meets the Sea" class="prod-card-img" onerror="this.style.display='none'">
+        <div class="prod-card-placeholder"><span>II</span></div>
+        <div class="prod-card-body">
+          <div class="prod-accent" style="background:#c8a96e;"></div>
+          <p class="prod-year">2023</p>
+          <h3 class="prod-title">Where the River<br>Meets the Sea</h3>
+          <p class="prod-role">Actor · Translator</p>
+          <p class="prod-venue">Dir. Janet Amsden</p>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <img src="images/demons.jpg" alt="Demons" class="prod-card-img" onerror="this.style.display='none'">
+        <div class="prod-card-placeholder"><span>III</span></div>
+        <div class="prod-card-body">
+          <div class="prod-accent" style="background:#2a4a8b;"></div>
+          <p class="prod-year">2019</p>
+          <h3 class="prod-title">Demons</h3>
+          <p class="prod-role">Director</p>
+          <p class="prod-venue">Bridewell Theatre, London</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="what">
+    <p class="section-label">Disciplines</p>
+    <div class="what-grid">
+      <div class="what-item">
+        <p class="what-number">01</p>
+        <h3 class="what-title">Theatre Direction</h3>
+        <p class="what-desc">Naturalistic work rooted in Stanislavski and European playwriting — Strindberg, Norén, Lorca, Molière. London and Edinburgh.</p>
+      </div>
+      <div class="what-item">
+        <p class="what-number">02</p>
+        <h3 class="what-title">Acting</h3>
+        <p class="what-desc">Stage and voice. Portuguese, English, Italian. Trained in Method and Movement Psychology at GFCA.</p>
+      </div>
+      <div class="what-item">
+        <p class="what-number">03</p>
+        <h3 class="what-title">Audio &amp; Dubbing</h3>
+        <p class="what-desc">20+ titles dubbed and quality-checked for Netflix Brazil. Voice direction for corporate video. Script adaptation across three languages.</p>
+      </div>
+      <div class="what-item">
+        <p class="what-number">04</p>
+        <h3 class="what-title">Translation</h3>
+        <p class="what-desc">Four plays translated from Portuguese into English. Two produced. Works by Sergio Roveri, adapted for the British stage.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="workshops-teaser">
+    <div>
+      <p class="workshops-label">Coming soon — 2026</p>
+      <h2 class="workshops-title">Acting &amp; Movement<br>Psychology Workshops</h2>
+      <p class="workshops-desc">
+        London-based workshops launching in 2026, drawing on Stanislavski's method and the Yat Malmgren approach to movement and character. Register your interest and be the first to hear when dates are confirmed.
+      </p>
+      <form class="signup-form" onsubmit="handleSignup(event)">
+        <input type="email" class="signup-input" placeholder="your@email.com" required>
+        <button type="submit" class="signup-btn">Notify me</button>
+      </form>
+      <p class="signup-note" id="signup-msg">No spam. One email when dates are confirmed.</p>
+    </div>
+    <div class="workshops-right">
+      <div class="workshop-detail">
+        <p class="workshop-detail-label">Format</p>
+        <p class="workshop-detail-text">Intensive scene study and movement work. Small groups.</p>
+      </div>
+      <div class="workshop-detail">
+        <p class="workshop-detail-label">Location</p>
+        <p class="workshop-detail-text">London — venue TBC</p>
+      </div>
+      <div class="workshop-detail">
+        <p class="workshop-detail-label">Approach</p>
+        <p class="workshop-detail-text">Stanislavski method · Yat Malmgren Movement Psychology lineage</p>
+      </div>
+      <div class="workshop-detail">
+        <p class="workshop-detail-label">Languages</p>
+        <p class="workshop-detail-text">English · Portuguese sessions available</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-name">Althyr Pivatto</span>
+    <ul class="footer-links">
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="audio.html">Audio</a></li>
+      <li><a href="teaching.html">Workshops</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://instagram.com/althyr" target="_blank">Instagram</a></li>
+      <li><a href="https://linkedin.com/in/althyrpivatto" target="_blank">LinkedIn</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    function handleSignup(e) {
+      e.preventDefault();
+      const msg = document.getElementById('signup-msg');
+      msg.textContent = "Thanks — I'll be in touch when dates are confirmed.";
+      msg.style.color = 'var(--accent)';
+      e.target.reset();
+    }
+  </script>
+
+</body>
+</html>

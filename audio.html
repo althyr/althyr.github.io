@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio — Althyr Pivatto</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .audio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 0.5px solid var(--border);
+      margin-bottom: 64px;
+    }
+    .audio-card {
+      padding: 48px 40px;
+      border-right: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .audio-card:nth-child(even) { border-right: none; }
+    .audio-card:nth-last-child(-n+2) { border-bottom: none; }
+    .audio-card-number {
+      font-family: var(--ff-display);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
+    }
+    .audio-card-title {
+      font-family: var(--ff-display);
+      font-size: 26px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .audio-card-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .netflix-section { margin-bottom: 64px; }
+    .netflix-label {
+      font-family: var(--ff-label);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 24px;
+    }
+    .netflix-titles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      margin-bottom: 16px;
+    }
+    .netflix-title-card {
+      background: var(--surface);
+      padding: 24px 20px;
+    }
+    .netflix-title-name {
+      font-family: var(--ff-display);
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .netflix-title-role {
+      font-family: var(--ff-label);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+    .netflix-note {
+      font-size: 12px;
+      color: var(--faint);
+      font-style: italic;
+    }
+
+    .translations-section {}
+    .translation-row {
+      display: grid;
+      grid-template-columns: 1fr 120px 160px;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 0.5px solid var(--border);
+      align-items: baseline;
+    }
+    .translation-row:last-child { border-bottom: none; }
+    .translation-title {
+      font-family: var(--ff-display);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .translation-author { font-size: 12px; color: var(--faint); margin-top: 3px; }
+    .translation-status {
+      font-family: var(--ff-label);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 1px;
+      align-self: center;
+    }
+    .status-produced {
+      background: rgba(200,169,110,0.1);
+      color: var(--accent);
+      border: 0.5px solid rgba(200,169,110,0.3);
+    }
+    .status-translated {
+      color: var(--faint);
+      border: 0.5px solid var(--border);
+    }
+    .translation-langs { font-size: 12px; color: var(--faint); }
+
+    @media (max-width: 700px) {
+      .audio-grid { grid-template-columns: 1fr; }
+      .audio-card { border-right: none; }
+      .netflix-titles { grid-template-columns: 1fr; }
+      .translation-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Althyr Pivatto</a>
+    <ul class="nav-links">
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="audio.html" class="active">Audio</a></li>
+      <li><a href="teaching.html">Workshops</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="eyebrow">Audio &amp; screen</p>
+    <h1>Dubbing · Voice<br>Translation</h1>
+  </div>
+
+  <div class="section">
+
+    <div class="audio-grid">
+      <div class="audio-card">
+        <p class="audio-card-number">01</p>
+        <h2 class="audio-card-title">Dubbing</h2>
+        <p class="audio-card-desc">Over 20 titles dubbed for Netflix Brazil — translating, adapting and directing voice performance for Portuguese-language audiences. Languages: Portuguese, English, Italian.</p>
+      </div>
+      <div class="audio-card">
+        <p class="audio-card-number">02</p>
+        <h2 class="audio-card-title">Quality Control</h2>
+        <p class="audio-card-desc">QC review for dubbed and subtitled content — ensuring lip-sync accuracy, tonal consistency and cultural adaptation across multiple series.</p>
+      </div>
+      <div class="audio-card">
+        <p class="audio-card-number">03</p>
+        <h2 class="audio-card-title">Voice Direction</h2>
+        <p class="audio-card-desc">Direction of voice-over recording sessions for corporate video. Script adaptation, performance coaching and studio direction across Portuguese and English.</p>
+      </div>
+      <div class="audio-card">
+        <p class="audio-card-number">04</p>
+        <h2 class="audio-card-title">Languages</h2>
+        <p class="audio-card-desc">Native Portuguese (Brazilian). Fluent English. Italian. Ability to work as talent, director or adaptor across all three languages in the same production.</p>
+      </div>
+    </div>
+
+    <div class="netflix-section">
+      <p class="netflix-label">Selected titles — Netflix Brazil</p>
+      <div class="netflix-titles">
+        <div class="netflix-title-card">
+          <p class="netflix-title-name">Jumbo Just Desserts</p>
+          <p class="netflix-title-role">Dubbing · QC</p>
+        </div>
+        <div class="netflix-title-card">
+          <p class="netflix-title-name">Fastest Car</p>
+          <p class="netflix-title-role">Dubbing · QC · Multiple series</p>
+        </div>
+        <div class="netflix-title-card">
+          <p class="netflix-title-name">72 Most Dangerous Animals: South America</p>
+          <p class="netflix-title-role">Dubbing · QC</p>
+        </div>
+      </div>
+      <p class="netflix-note">Additional titles available on request. Some credits subject to NDA.</p>
+    </div>
+
+    <hr class="divider">
+
+    <p class="section-label">Translations — stage</p>
+    <div class="translations-section">
+
+      <div class="translation-row">
+        <div>
+          <p class="translation-title">Where the River Meets the Sea</p>
+          <p class="translation-author">Sergio Roveri</p>
+        </div>
+        <span class="translation-status status-produced">Produced</span>
+        <p class="translation-langs">PT → EN</p>
+      </div>
+
+      <div class="translation-row">
+        <div>
+          <p class="translation-title">Frankenstein</p>
+          <p class="translation-author">Sergio Roveri</p>
+        </div>
+        <span class="translation-status status-produced">Produced</span>
+        <p class="translation-langs">PT → EN</p>
+      </div>
+
+      <div class="translation-row">
+        <div>
+          <p class="translation-title">While We Are Here</p>
+          <p class="translation-author">Sergio Roveri</p>
+        </div>
+        <span class="translation-status status-translated">Translated</span>
+        <p class="translation-langs">PT → EN</p>
+      </div>
+
+      <div class="translation-row">
+        <div>
+          <p class="translation-title">Spread Your Wings Over Us</p>
+          <p class="translation-author">Sergio Roveri</p>
+        </div>
+        <span class="translation-status status-translated">Translated</span>
+        <p class="translation-langs">PT → EN</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-name">Althyr Pivatto</span>
+    <ul class="footer-links">
+      <li><a href="credits.html">Credits</a></li>
+      <li><a href="audio.html">Audio</a></li>
+      <li><a href="teaching.html">Workshops</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
