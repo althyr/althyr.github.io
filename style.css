@@ -8,11 +8,11 @@
   --surface2: #181818;
   --border: rgba(255,255,255,0.08);
   --border2: rgba(255,255,255,0.14);
-  --text: #e4e2dc;
-  --muted: rgba(228,226,220,0.45);
-  --faint: rgba(228,226,220,0.2);
-  --accent: #c8a96e;
-  --accent2: #8b4a2a;
+  --text: #ffffff;
+  --muted: rgba(255,255,255,0.55);
+  --faint: rgba(255,255,255,0.28);
+  --accent: #d4b483;
+  --accent2: #9a5530;
   --ff-display: 'Cormorant Garamond', Georgia, serif;
   --ff-body: 'Barlow', sans-serif;
   --ff-label: 'Barlow Condensed', sans-serif;
@@ -25,7 +25,7 @@ body {
   color: var(--text);
   font-family: var(--ff-body);
   font-weight: 300;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.7;
   min-height: 100vh;
 }
