@@ -205,8 +205,9 @@
       <p class="workshop-hero-desc">
         London-based workshops launching in 2026 — drawing on Stanislavski's method and the Yat Malmgren approach to movement and character. Small groups. Practical, process-led work.
       </p>
-      <form class="signup-form" onsubmit="handleSignup(event)">
-        <input type="email" class="signup-input" placeholder="your@email.com" required>
+      <form class="signup-form" action="https://formspree.io/f/mreyaryk" method="POST">
+        <input type="email" class="signup-input" name="email" placeholder="your@email.com" required>
+        <input type="hidden" name="subject" value="Workshop interest">
         <button type="submit" class="signup-btn">Notify me</button>
       </form>
       <p class="signup-note" id="signup-msg">No spam. One email when dates are confirmed.</p>
