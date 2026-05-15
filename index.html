@@ -6,7 +6,7 @@
   <title>Althyr Pivatto — Director · Actor · Translator</title>
   <meta name="description" content="Althyr Pivatto is a Brazilian theatre director, actor, translator and voice director based in London, available for work across London and Europe.">
   <link rel="stylesheet" href="style.css">
-  <style>
+<style>
     .hero {
       min-height: 100vh;
       display: grid;
@@ -26,7 +26,7 @@
     .hero-left {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       padding: 0 48px 80px;
     }
     .hero-eyebrow {
@@ -80,8 +80,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 120px 48px 80px;
-      gap: 40px;
+      padding: 80px 48px;
+      gap: 32px;
     }
     .hero-quote {
       font-family: var(--ff-display);
@@ -99,25 +99,26 @@
       color: var(--faint);
       margin-right: 4px;
     }
-   .hero-bio {
-  font-size: 16px;
-  line-height: 1.85;
-  color: var(--faint);
-  border-top: 0.5px solid var(--border);
-  padding-top: 32px;
-}
+    .hero-headshot {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      margin: 0 auto;
+      filter: grayscale(100%);
+      opacity: 0.85;
+    }
+    .hero-bio {
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--faint);
+      border-top: 0.5px solid var(--border);
+      padding-top: 32px;
+    }
     .hero-bio strong { color: var(--muted); font-weight: 400; }
 
-    .hero-headshot {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  margin-bottom: 24px;
-  filter: grayscale(100%);
-  opacity: 0.85;
-}
     /* productions */
     .productions { padding: 80px 48px; border-bottom: 0.5px solid var(--border); }
     .prod-grid {
@@ -217,7 +218,7 @@
       margin-bottom: 10px;
       line-height: 1.2;
     }
-    .what-desc { font-size: 13px; line-height: 1.75; color: var(--muted); }
+    .what-desc { font-size: 15px; line-height: 1.75; color: var(--muted); }
 
     /* workshops teaser */
     .workshops-teaser {
@@ -245,7 +246,7 @@
       margin-bottom: 20px;
     }
     .workshops-desc {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.8;
       color: var(--muted);
       margin-bottom: 32px;
@@ -295,7 +296,7 @@
     }
     .workshop-detail-text {
       font-family: var(--ff-display);
-      font-size: 17px;
+      font-size: 15px;
       color: var(--muted);
       line-height: 1.5;
     }
