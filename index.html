@@ -6,11 +6,11 @@
   <title>Althyr Pivatto — Director · Actor · Translator</title>
   <meta name="description" content="Althyr Pivatto is a Brazilian theatre director, actor, translator and voice director based in London, available for work across London and Europe.">
   <link rel="stylesheet" href="style.css">
-<style>
+  <style>
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 2fr 3fr;
+      grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
     }
@@ -26,7 +26,7 @@
     .hero-left {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-end;
       padding: 0 48px 80px;
     }
     .hero-eyebrow {
@@ -80,8 +80,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 48px;
-      gap: 32px;
+      padding: 120px 48px 80px;
+      gap: 40px;
     }
     .hero-quote {
       font-family: var(--ff-display);
@@ -99,19 +99,8 @@
       color: var(--faint);
       margin-right: 4px;
     }
-    .hero-headshot {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      margin: 0 auto;
-      filter: grayscale(100%);
-      opacity: 0.85;
-    }
     .hero-bio {
-      font-size: 16px;
+      font-size: 13px;
       line-height: 1.85;
       color: var(--faint);
       border-top: 0.5px solid var(--border);
@@ -209,16 +198,16 @@
       color: var(--accent);
       margin-bottom: 18px;
       letter-spacing: 0.1em;
-        }
- .what-title {
-  font-family: var(--ff-display);
-  font-size: 21px;
-  font-weight: 500;
-  color: #ffffff;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-    .what-desc { font-size: 16px; line-height: 1.75; color: var(--text); }
+    }
+    .what-title {
+      font-family: var(--ff-display);
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .what-desc { font-size: 13px; line-height: 1.75; color: var(--muted); }
 
     /* workshops teaser */
     .workshops-teaser {
@@ -246,7 +235,7 @@
       margin-bottom: 20px;
     }
     .workshops-desc {
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1.8;
       color: var(--muted);
       margin-bottom: 32px;
@@ -288,7 +277,7 @@
     .workshop-detail:last-child { border-bottom: none; }
     .workshop-detail-label {
       font-family: var(--ff-label);
-      font-size: 14px;
+      font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--faint);
@@ -296,7 +285,7 @@
     }
     .workshop-detail-text {
       font-family: var(--ff-display);
-      font-size: 16px;
+      font-size: 17px;
       color: var(--muted);
       line-height: 1.5;
     }
@@ -314,15 +303,6 @@
       .workshops-teaser { grid-template-columns: 1fr; gap: 48px; }
       .workshops-right { border-left: none; border-top: 0.5px solid var(--border); padding-left: 0; padding-top: 40px; }
     }
-.section-label {
-  font-family: var(--ff-label);
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 40px;
-}
-  
   </style>
 </head>
 <body>
@@ -334,6 +314,8 @@
       <li><a href="audio.html">Audio</a></li>
       <li><a href="teaching.html">Workshops</a></li>
       <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="reflections.html">Reflections</a></li>
+      <li><a href="reflections.html">Reflections</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -351,14 +333,12 @@
       <a href="contact.html" class="hero-cta">Get in touch</a>
     </div>
     <div class="hero-right">
-           <img src="headshot.png" alt="Althyr Pivatto" class="hero-headshot">
       <blockquote class="hero-quote">
         My style as a director is naturalistic, hence my affinity with Scandinavian and European playwrights. I am committed to revealing real people in an extract of their lives, which resemble the audience's most private moments.
       </blockquote>
- 
-  <p class="hero-bio">
-  Brazilian director and translator based in <strong>London</strong>. Trained at the Giles Foreman Centre for Acting in Stanislavski and Movement Psychology. Two UK premieres directed: <strong>Demons</strong> by Lars Norén and <strong>Frankenstein War Fragments</strong> by Sergio Roveri. Four plays translated from Portuguese. 20+ titles dubbed for <strong>Netflix Brazil</strong>.
-</p>
+      <p class="hero-bio">
+        Brazilian creative based in <strong>London</strong>. Trained at the Giles Foreman Centre for Acting in Stanislavski and Movement Psychology (Yat Malmgren lineage). Theatre work at the <strong>White Bear Theatre, Bridewell Theatre and Southwark Playhouse</strong>. Four plays translated from Portuguese. 20+ titles dubbed for <strong>Netflix Brazil</strong>. Available for directing, acting, translation and audio work across London and Europe.
+      </p>
     </div>
   </section>
 
@@ -427,9 +407,8 @@
     </div>
   </section>
 
-<section class="workshops-teaser">
-  <p class="section-label" style="grid-column: 1 / -1;">Workshops</p>
-  <div>
+  <section class="workshops-teaser">
+    <div>
       <p class="workshops-label">Coming soon — 2026</p>
       <h2 class="workshops-title">Acting &amp; Movement<br>Psychology Workshops</h2>
       <p class="workshops-desc">
@@ -461,6 +440,7 @@
           }
         });
       </script>
+      <p class="signup-note" id="signup-msg">No spam. One email when dates are confirmed.</p>
     </div>
     <div class="workshops-right">
       <div class="workshop-detail">
@@ -489,6 +469,8 @@
       <li><a href="audio.html">Audio</a></li>
       <li><a href="teaching.html">Workshops</a></li>
       <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="reflections.html">Reflections</a></li>
+      <li><a href="reflections.html">Reflections</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="https://instagram.com/althyr" target="_blank">Instagram</a></li>
       <li><a href="https://linkedin.com/in/althyrpivatto" target="_blank">LinkedIn</a></li>
